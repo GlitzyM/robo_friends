@@ -27,7 +27,7 @@ class App extends Component {
   render() {
     const { robots, searchfield } = this.state;
     const filteredRobots = robots.filter(robot => {
-      return robot.username.toLowerCase().includes(searchfield.toLowerCase())
+      return robot.username.toLowerCase().startsWith(searchfield.toLowerCase())
     })
     return !robots.length? 
       <h1>Loading</h1> :
